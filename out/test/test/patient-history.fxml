@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.geometry.Insets?>
+<ScrollPane prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PatientHistoryController">
+    <content>
+        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0">
+            <children>
+                <HBox alignment="TOP_CENTER" layoutX="26.0" layoutY="499.0" prefHeight="29.0" prefWidth="443.0" spacing="15.0">
+                    <children>
+                        <Button fx:id="addButtonHistory" mnemonicParsing="false" text="Add" />
+                        <Button fx:id="searchButtonHistory" mnemonicParsing="false" text="Search" />
+                        <Button fx:id="updateButtonHistory" mnemonicParsing="false" text="Update" />
+                        <Button fx:id="deleteButtonHistory" mnemonicParsing="false" text="Delete" />
+                        <Button fx:id="clearButtonHistory" mnemonicParsing="false" text="Clear" />
+                    </children>
+                </HBox>
+                <TextArea fx:id="actionStatusHistory" layoutX="36.0" layoutY="562.0" prefHeight="177.0" prefWidth="492.0" />
+                <GridPane layoutX="79.0" layoutY="41.0" prefHeight="425.0" prefWidth="300.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.20001220703125" minWidth="10.0" prefWidth="111.60003662109375" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="222.8000030517578" minWidth="10.0" prefWidth="188.39996337890625" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Patient ID" />
+                        <Label text="Height" GridPane.rowIndex="1" />
+                        <Label text="Weight" GridPane.rowIndex="2" />
+                        <TextField fx:id="idFieldHistory" GridPane.columnIndex="1" />
+                        <TextField fx:id="heightField" prefHeight="25.0" prefWidth="147.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="weightField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Chilhood Diseases" GridPane.rowIndex="5">
+                            <GridPane.margin>
+                                <Insets top="10.0" />
+                            </GridPane.margin></Label>
+                        <Label text="Allergies" GridPane.rowIndex="6">
+                            <GridPane.margin>
+                                <Insets top="20.0" />
+                            </GridPane.margin></Label>
+                        <Label text="Medicine History" GridPane.rowIndex="7">
+                            <GridPane.margin>
+                                <Insets top="20.0" />
+                            </GridPane.margin></Label>
+                        <Label text="Sexual History" GridPane.rowIndex="8">
+                            <GridPane.margin>
+                                <Insets top="20.0" />
+                            </GridPane.margin></Label>
+                        <Label text="Procedure History" GridPane.rowIndex="9">
+                            <GridPane.margin>
+                                <Insets top="10.0" />
+                            </GridPane.margin></Label>
+                        <Label text="Past Illnesses" GridPane.rowIndex="3" />
+                        <Label text="Family Diseases" GridPane.rowIndex="4" />
+                        <TextArea fx:id="pastIllnessField" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                            <GridPane.margin>
+                                <Insets bottom="10.0" />
+                            </GridPane.margin>
+                        </TextArea>
+                        <TextArea fx:id="familyDiseaseField" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextArea fx:id="childhoodDisease" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                            <GridPane.margin>
+                                <Insets top="10.0" />
+                            </GridPane.margin>
+                        </TextArea>
+                        <TextArea fx:id="allergiesField" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                            <GridPane.margin>
+                                <Insets top="10.0" />
+                            </GridPane.margin>
+                        </TextArea>
+                        <TextArea fx:id="medicineHistoryField" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                            <GridPane.margin>
+                                <Insets top="10.0" />
+                            </GridPane.margin>
+                        </TextArea>
+                        <TextArea fx:id="procedureHistoryField" prefHeight="57.0" prefWidth="189.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                            <GridPane.margin>
+                                <Insets top="10.0" />
+                            </GridPane.margin>
+                        </TextArea>
+                        <TextField fx:id="sexualHistoryField" prefHeight="50.0" prefWidth="189.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                            <GridPane.margin>
+                                <Insets top="10.0" />
+                            </GridPane.margin>
+                        </TextField>
+                    </children>
+                </GridPane>
+                <Button fx:id="backButtonHistory" layoutX="421.0" layoutY="51.0" mnemonicParsing="false" text="back" />
+            </children>
+        </Pane>
+    </content>
+</ScrollPane>

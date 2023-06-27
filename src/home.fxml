@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.36111111111111105" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HelloController">
+   <items>
+      <VBox prefHeight="398.0" prefWidth="172.0" spacing="18.0" style="-fx-background-color: #dbedff;">
+         <children>
+            <Label alignment="CENTER" prefHeight="42.0" prefWidth="116.0" text="Menu" textAlignment="CENTER" textFill="#5f85a5">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Label>
+          <Button fx:id="PatientRecordsButton" minWidth="34.0" mnemonicParsing="false" onAction="#PatientRecordsButtonOnAction" prefHeight="66.0" prefWidth="119.0" style="-fx-background-color: #5f85a5;" text="Patient &#10;Records" textAlignment="CENTER" />
+            <Button fx:id="PatientHistoryButton" mnemonicParsing="false" onAction="#PatientHistoryButtonOnAction" prefHeight="69.0" prefWidth="119.0" style="-fx-background-color: #5f85a5;" text="Patient &#10;History" textAlignment="CENTER" />
+            <Button fx:id="DiagnosisButton" mnemonicParsing="false" onAction="#DiagnosisButtonOnAction" prefHeight="58.0" prefWidth="119.0" style="-fx-background-color: #5f85a5;" text="Diagnosis&#10;&#10;" />
+            <Button fx:id="TreatmentCourseButton" mnemonicParsing="false" onAction="#TreatmentCourseButtonOnAction" prefHeight="67.0" prefWidth="119.0" style="-fx-background-color: #5f85a5;" text="Treatment &#10;Courses" textAlignment="CENTER" />
+            <Button fx:id="ProMedButton" minWidth="34.0" mnemonicParsing="false" onAction="#ProMedButton" prefHeight="66.0" prefWidth="119.0" style="-fx-background-color: #5f85a5;" text="Procedures &#10;&amp; Medicines" textAlignment="CENTER" />
+            <Button fx:id="LogoutButton" layoutX="20.0" layoutY="330.0" minWidth="34.0" mnemonicParsing="false" onAction="#logoutButtonOnAction" prefHeight="48.0" prefWidth="119.0" style="-fx-background-color: #5f85a5;" text="Logout&#10;" textAlignment="CENTER" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="10.0" />
+         </padding>
+      </VBox>
+      <ImageView fitHeight="399.0" fitWidth="360.0" pickOnBounds="true">
+         <image>
+            <Image url="HealthRec.jpg" />
+         </image>
+      </ImageView>
+   </items>
+</SplitPane>
