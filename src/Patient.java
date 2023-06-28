@@ -11,6 +11,7 @@ public class Patient implements Comparable<Patient> {
     private String gender;
     private LocalDate dateOfBirth;
     private String nationality;
+    private String condition;
     private String occupation;
     private String maritalStatus;
     private String address;
@@ -24,7 +25,7 @@ public class Patient implements Comparable<Patient> {
 
     // Constructor (encapsulation, abstraction)
     public Patient(String patientId, String name, String icNumber, String bloodType, String age, String gender,
-                   LocalDate dateOfBirth, String nationality, String occupation, String maritalStatus, String address,
+                   LocalDate dateOfBirth, String nationality, String condition, String occupation, String maritalStatus, String address,
                    String contactNumber, String email) {
         this.patientId = patientId;
         this.name = name;
@@ -34,6 +35,7 @@ public class Patient implements Comparable<Patient> {
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
         this.nationality = nationality;
+        this.condition = condition;
         this.occupation = occupation;
         this.maritalStatus = maritalStatus;
         this.address = address;
@@ -100,6 +102,14 @@ public class Patient implements Comparable<Patient> {
 
     public void setNationality(String nationality) {
         this.nationality = nationality;
+    }
+
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
     }
 
     public String getOccupation() {

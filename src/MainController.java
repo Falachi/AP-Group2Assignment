@@ -84,7 +84,7 @@ public class MainController  extends HelloApplication{
                 DOBField.setValue(p.getDateOfBirth());
                 nationalityField.setText(p.getNationality());
                 occupationField.setText(p.getOccupation());
-                conditionField.setText("");
+                conditionField.setText(p.getCondition());
                 marryField.setText(p.getMaritalStatus());
                 addressField.setText(p.getAddress());
                 phoneField.setText(p.getContactNumber());
@@ -143,12 +143,13 @@ public class MainController  extends HelloApplication{
         String gender = genderField.getText();
         String nationality = nationalityField.getText();
         String occupation = occupationField.getText();
+        String condition = conditionField.getText();
         String maritalStatus = marryField.getText();
         String address = addressField.getText();
         String contactNumber = phoneField.getText();
         String email = emailField.getText();
 
-        Patient p = new Patient(patientId, name, age, icNumber, bloodType, gender, dateOfBirth, nationality, occupation, maritalStatus, address, contactNumber, email);
+        Patient p = new Patient(patientId, name, age, icNumber, bloodType, gender, dateOfBirth, nationality, occupation, condition, maritalStatus, address, contactNumber, email);
         searchString = patientId;
         if (keyExists(searchString)) {
             actionStatus.setText(actionStatus.getText() + "\nRecord Exists. Please click update to modify");
@@ -178,12 +179,13 @@ public class MainController  extends HelloApplication{
         String gender = genderField.getText();
         String nationality = nationalityField.getText();
         String occupation = occupationField.getText();
+        String condition = conditionField.getText();
         String maritalStatus = marryField.getText();
         String address = addressField.getText();
         String contactNumber = phoneField.getText();
         String email = emailField.getText();
 
-        Patient p = new Patient(patientId, name, age, icNumber, bloodType, gender, dateOfBirth, nationality, occupation, maritalStatus, address, contactNumber, email);
+        Patient p = new Patient(patientId, name, age, icNumber, bloodType, gender, dateOfBirth, nationality, occupation, condition, maritalStatus, address, contactNumber, email);
         CSVHandler csv = new CSVHandler();
         csv.update(p, Patient.fileName);
 
@@ -220,7 +222,7 @@ public class MainController  extends HelloApplication{
             if ((p.getPatientId()).contentEquals(searchString)) {
                 actionStatus.setText(actionStatus.getText() + "\nFound: " + searchString);
                 actionStatus.positionCaret(actionStatus.getLength());
-                return new Patient(p.getPatientId(),p.getName(),p.getIcNumber(),p.getBloodType(),p.getAge(),p.getGender(),p.getDateOfBirth(),p.getNationality(),p.getOccupation(),p.getMaritalStatus(),p.getAddress(),p.getContactNumber(),p.getEmail());
+                return new Patient(p.getPatientId(),p.getName(),p.getIcNumber(),p.getBloodType(),p.getAge(),p.getGender(),p.getDateOfBirth(),p.getNationality(),p.getOccupation(),p.getCondition(),p.getMaritalStatus(),p.getAddress(),p.getContactNumber(),p.getEmail());
             } else {
                 nameField.setText("");
                 ageField.setText("");

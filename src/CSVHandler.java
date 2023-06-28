@@ -6,7 +6,7 @@ public class CSVHandler {
     // Class-level variables
     private String delimiter = ",";
     private String newline = "\n";
-    private String header = "patientid, name, ic, bloodtype, age, gender, dob, natinonality, occupation, maritalstatus, address, contactno, email";
+    private String header = "patientid, name, ic, bloodtype, age, gender, dob, natinonality, condition, occupation, maritalstatus, address, contactno, email";
 
     // constructors
     public CSVHandler() {
@@ -46,6 +46,8 @@ public class CSVHandler {
                 fileWriter.append(delimiter);
                 fileWriter.append(patient.getNationality());
                 fileWriter.append(delimiter);
+                fileWriter.append(patient.getCondition());
+                fileWriter.append(delimiter);
                 fileWriter.append(patient.getOccupation());
                 fileWriter.append(delimiter);
                 fileWriter.append(patient.getMaritalStatus());
@@ -83,7 +85,7 @@ public class CSVHandler {
                 String[] tokens = line.split(delimiter);
                 if (tokens.length > 0) {
                     // Creating Patient object and adding to the list
-                    Patient patient = new Patient(tokens[0], tokens[1], tokens[2], tokens[3], tokens[4], tokens[5], LocalDate.parse(tokens[6]), tokens[7], tokens[8], tokens[9], tokens[10], tokens[11], tokens[12]);
+                    Patient patient = new Patient(tokens[0], tokens[1], tokens[2], tokens[3], tokens[4], tokens[5], LocalDate.parse(tokens[6]), tokens[7], tokens[8], tokens[9], tokens[10], tokens[11], tokens[12], tokens[13]);
                     patients.add(patient);
                 }
             }
@@ -117,7 +119,7 @@ public class CSVHandler {
     }
     
     // Method to update an existing Patient object in the CSV file using ID as the identifier
-    public void update(String id, String newName, String newicNumber, String newbloodType, String newAge, String newgender, LocalDate newdateofBirth, String newnationality, String newoccupation, String newmaritalStatus, String newaddress, String newcontactNumber, String newemail, String fileName) {
+    public void update(String id, String newName, String newicNumber, String newbloodType, String newAge, String newgender, LocalDate newdateofBirth, String newnationality, String newcondition, String newoccupation, String newmaritalStatus, String newaddress, String newcontactNumber, String newemail, String fileName) {
         // Local variable
         List<Patient> patients = readCSV(fileName);
         for (Patient patient : patients) {
@@ -130,6 +132,7 @@ public class CSVHandler {
                 patient.setGender(newgender);
                 patient.setDateOfBirth(newdateofBirth);
                 patient.setNationality(newnationality);
+                patient.setCondition(newcondition);
                 patient.setOccupation(newoccupation);
                 patient.setMaritalStatus(newmaritalStatus);
                 patient.setAddress(newaddress);
@@ -152,6 +155,7 @@ public class CSVHandler {
                 patient.setGender(p.getGender());
                 patient.setDateOfBirth(p.getDateOfBirth());
                 patient.setNationality(p.getNationality());
+                patient.setCondition(p.getCondition());
                 patient.setOccupation(p.getOccupation());
                 patient.setMaritalStatus(p.getMaritalStatus());
                 patient.setAddress(p.getAddress());
@@ -174,6 +178,7 @@ public class CSVHandler {
                 patient.setGender(p.getGender());
                 patient.setDateOfBirth(p.getDateOfBirth());
                 patient.setNationality(p.getNationality());
+                patient.setCondition(p.getCondition());
                 patient.setOccupation(p.getOccupation());
                 patient.setMaritalStatus(p.getMaritalStatus());
                 patient.setAddress(p.getAddress());
